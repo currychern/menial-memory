@@ -1,0 +1,30 @@
+<template name="simulation">
+  <form class="new-simulation">
+    <li>
+      <label for="num">Trials:</label>
+      <input type="number" name="num" min="1" max="100000" value="1">
+    </li>
+    <li>
+      <label for="pairs">Pairs:</label>
+      <input type="number" name="pairs" min="1" max="15" value="2">
+    </li>
+    <li>
+      <label for="turns">Turns:</label>
+      <input type="number" name="turns" min="1" max="15" value="2">
+    </li>
+    <input type="submit" value="Run!"/>
+  </form>
+  <br>
+  <div>
+    <li>
+      <span>Average Matches:</span>
+      <span>{{ avg }}</span>
+    </li>
+
+    <ul>
+      {{#each decodeHistogram hist}}
+        <li>{{matches}} - {{frequency}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</template>
