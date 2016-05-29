@@ -4,7 +4,7 @@ Started: May 28, 2016
 Author: Curry Chern
 
 Github: https://github.com/currychern/menial-memory
---------------------------------------------------------------------------------
+================================================================================
 
 This project generates simulations of memory, the card-matching game.
 
@@ -17,6 +17,8 @@ The user enters the following parameters:
 The simulation returns the following:
   Average:    the average number of matches across all simulations
   Frequency:  the number of trials that were found to have x matches
+
+--------------------------------------------------------------------------------
 
 Example - Trials: 2, Pairs: 4, Turns: 3
 

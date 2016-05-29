@@ -52,7 +52,7 @@ Template.simulation.events({
             if (error)
               console.log(error);
             else
-              instance.average.set(data);
+              instance.average.set(data.toFixed(3));
           });
 
           // Get the distribution of matches in the simulation
