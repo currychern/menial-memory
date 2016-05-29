@@ -1,0 +1,148 @@
+/* CSS declarations go here */
+
+@import 'nib'
+@import 'jeet'
+
+
+/* VARIABLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+// Colors
+text-color = #222
+border-color = #ededed
+border-color-darken = darken(border-color, 5%)
+border-color-lighten = lighten(border-color, 5%)
+link-more-color = dodgerblue
+link-hover-color = darken(link-more-color, 20%)
+button-color = red
+
+// Breakpoints
+breakpoint-xs-width = 450px
+breakpoint-sm-width = 600px
+breakpoint-md-width = 800px
+breakpoint-lg-width = 960px
+
+
+
+/* MIXINS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+style-header()
+  padding 12px
+  text-transform uppercase
+  border-bottom 1px dashed border-color-darken
+
+
+
+/* DEFAULT STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+*
+  padding 0
+  margin 0
+  box-sizing border-box
+  line-height 1.5
+
+section
+  clearfix()
+  margin-bottom 40px
+
+  &:last-child
+    margin-bottom 0
+
+h2
+  margin-bottom 20px
+
+a
+  text-decoration none
+
+img
+  max-width 100%
+
+ul
+  padding 0px
+  list-style none
+
+li
+  padding 12px
+  border-bottom 1px solid #eee
+
+.button-submit
+  background button-color
+  color #eee
+  border none
+  border-radius: 5px;
+
+
+
+/* WRAPPER STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.wrapper
+  text-align center
+  margin-top 40px
+  center(960px)
+
+
+
+/* SECTION.SIMULATION STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.simulation
+  h3
+    style-header()
+
+  form
+    display inline-block
+
+    input
+      height 40px
+      padding 5px 8px
+
+    label
+      width 80px
+      margin-top 3px
+      display inline-block
+      padding 3px
+
+    .form-input
+      width 100px
+
+    .button-submit
+      width 195px
+
+  div
+    margin-bottom 10px
+    border 2px solid border-color-darken
+
+    p
+      line-height 1.7
+      padding 15px
+
+
+
+/* MQ-XS STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: breakpoint-xs-width) {
+
+}
+
+
+
+/* MQ-SM STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: breakpoint-sm-width)
+  .simulation div
+    col(1/2)
+
+
+
+/* MQ-MD STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: breakpoint-md-width) {
+}
+
+
+
+/* MQ-LG STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: breakpoint-lg-width) {
+}
