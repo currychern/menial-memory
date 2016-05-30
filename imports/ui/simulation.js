@@ -2,7 +2,9 @@ import { Template } from 'meteor/templating';
 
 import { Trials } from '../api/trials.js';
 
+import './histogram.js';
 import './simulation.html';
+
 
 Template.registerHelper('decodeHistogram', (obj) => {
     var result = [];
@@ -12,7 +14,7 @@ Template.registerHelper('decodeHistogram', (obj) => {
 
 Template.simulation.onCreated(function bodyOnCreated() {
   this.average = new ReactiveVar();
-  this.histogram = new ReactiveVar();
+  this.histogram = new ReactiveVar([]);
 });
 
 Template.simulation.helpers({
@@ -37,10 +39,10 @@ Template.simulation.events({
     const pairs = Number(target.pairs.value);
     const turns = Number(target.turns.value);
 
-    //Reset trials collection
+    // Reset trials collection
     Meteor.call('trials.reset');
 
-    //Run simulation
+    // Run simulation
     instance.average.set('Calculating...');
     Meteor.call('trials.run', num, pairs, turns, function(error, data) {
         if (error) {

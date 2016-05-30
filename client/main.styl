@@ -22,8 +22,6 @@ breakpoint-sm-width = 600px
 breakpoint-md-width = 800px
 breakpoint-lg-width = 960px
 
-
-
 /* MIXINS
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -75,6 +73,22 @@ li
 
 
 
+/* CHART STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+svg
+  font 10px sans-serif
+
+.bar
+  fill steelblue
+  shape-rendering crispEdges
+
+.axis path, .axis line
+  fill none
+  stroke #000
+  shape-rendering crispEdges
+
+
+
 /* WRAPPER STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .wrapper
@@ -90,8 +104,14 @@ li
   h3
     style-header()
 
+  .content
+    height 420px
+    position relative
+
   form
     display inline-block
+    absolute left 50% top 50%
+    transform translate3d(-50%, -50%, 0)
 
     input
       height 40px

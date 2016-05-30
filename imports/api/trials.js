@@ -41,7 +41,8 @@ if (Meteor.isServer) {
     },
     'trials.getHistogram' () {
       return Trials.aggregate([
-          { $group: { _id: "$matches", freq: { $sum: 1 } } }
+          { $group: { _id: "$matches", freq: { $sum: 1 } } },
+          { $sort: { _id: 1 } }
       ]);
     },
   });
