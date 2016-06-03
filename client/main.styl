@@ -14,7 +14,8 @@ border-color-darken = darken(border-color, 5%)
 border-color-lighten = lighten(border-color, 5%)
 link-more-color = dodgerblue
 link-hover-color = darken(link-more-color, 20%)
-button-color = red
+theme-color = red
+alt-theme-color = steelblue
 
 // Breakpoints
 breakpoint-xs-width = 450px
@@ -40,6 +41,7 @@ style-header()
   margin 0
   box-sizing border-box
   line-height 1.5
+  font-family: 'Ubuntu', sans-serif;
 
 section
   clearfix()
@@ -54,19 +56,23 @@ h2
 a
   text-decoration none
 
+p
+  padding 10px
+  margin-bottom 5px
+
 img
   max-width 100%
 
-ul
-  padding 0px
-  list-style none
+ol, ul
+  padding 48px
 
 li
   padding 12px
-  border-bottom 1px solid #eee
+  &:nth-last-child(n+2)
+    border-bottom 1px solid #eee
 
 .button-submit
-  background button-color
+  background theme-color
   color #eee
   border none
   border-radius: 5px;
@@ -76,10 +82,12 @@ li
 /* CHART STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 svg
-  font 10px sans-serif
+  font-size 10px
 
 .bar
-  fill steelblue
+  fill theme-color
+  &:hover
+    fill alt-theme-color
   shape-rendering crispEdges
 
 .axis path, .axis line
@@ -98,11 +106,36 @@ svg
 
 
 
+/* SECTION DESCRIPTION STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.description
+  div
+    padding 20px
+  .how-to
+    background theme-color
+    color white
+  li, p
+    text-align justify
+  .card
+    display inline-block
+    padding 10px 10px 10px 10px
+    margin 10px 10px 10px 10px
+    height 40px
+    width 40px
+    border-radius 5px
+    background black
+    border white
+
+
 /* SECTION.SIMULATION STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .simulation
   h3
     style-header()
+
+  ul
+    padding 0px
+    list-style none
 
   .content
     height 420px
@@ -142,7 +175,6 @@ svg
 /* MQ-XS STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media screen and (min-width: breakpoint-xs-width) {
-
 }
 
 

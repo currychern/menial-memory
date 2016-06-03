@@ -1,0 +1,104 @@
+<template name="description">
+  <section class="description">
+    <div class="background">
+      <p>
+        A few weeks ago, I saw my dad and sister play an online tower defense
+        game. One of the minigames is Memory, the classic card matching game.
+      </p>
+
+      <p>
+        During each turn, you choose a card to flip, then try to find the
+        matching card in the deck. This ends your turn. If the cards match, you
+        win an in-game item. If not, then the cards are flipped back over. The
+        game continues until you have either gotten all the matches or run out
+        of turns.
+      </p>
+
+      <p>
+        This got me thinking about Memory, combinatorics, and the number of
+        matches you would expect to get for n number of flips. I decided to
+        create a game simulator to find the result.
+      </p>
+    </div>
+    <div class="how-to">
+      <h2>How To</h2>
+      <p>
+        Memory is an easy game to play. There are a few variations of the game,
+        but we are going to choose the simplest one. In this version of Memory,
+        we will assume the following:
+        <ul>
+          <li>
+            There is only one player
+          </li>
+          <li>
+            The player's goal is to flip the most number of matches in the turns
+            allotted
+          </li>
+          <li>
+            Each card in the deck is paired with only one other card
+          </li>
+          <li>
+            The player has perfect memory! Once he/she sees a card, he/she always
+            knows where it is.
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        Based on our assumptions, we can figure out the optimal strategy:
+        <ol>
+          <li>
+            Beginning each turn, the player will first remember if any two cards
+            he/she previously revealed match. If so, then he/she will flip those two
+            matching cards.
+          </li>
+          <li>
+            If not, the player will flip the next available card. If that card
+            matches a previously revealed card, the player will flip the matching
+            card, giving a match.
+          </li>
+          <li>
+            If not, the player will flip the next available card and hope that
+            it matches. The turn ends.
+          </li>
+        </ol>
+      </p>
+
+      <h3>Example</h3>
+      <p>Trials:1, Pairs: 5, Turns: 6
+        <div class="card">E</div>
+        <div class="card">C</div>
+        <div class="card">A</div>
+        <div class="card">C</div>
+        <div class="card">E</div>
+        <div class="card">D</div>
+        <div class="card">D</div>
+        <div class="card">B</div>
+        <div class="card">A</div>
+        <div class="card">B</div>
+        <ol>
+          Turns
+          <li>
+            The player flips cards E and C (index: 0, 1). No match. Matches = 0.
+          </li>
+          <li>
+            The player flips cards A and C (index: 2, 3). No match. Matches = 0.
+          </li>
+          <li>
+            The player flips cards C and C (index: 3, 1). Match! Matches = 1.
+          </li>
+          <li>
+            The player flips cards E and E (index: 4, 0). Match! Matches = 2.
+          </li>
+          <li>
+            The player flips cards D and D (index: 5, 6). Match! Matches = 3.
+          </li>
+          <li>
+            The player flips cards B and A (index: 7, 8). No match. Matches = 3.
+          </li>
+        </ol>
+        Result: 3 matches
+      </p>
+    </div>
+  </section><!--end of .description-->
+</template>
